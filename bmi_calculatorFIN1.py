@@ -2,7 +2,6 @@ import tkinter as tk
 from PIL import Image, ImageTk
 import csv
 import matplotlib.pyplot as plt
-import cv2
 
 class MyApp(tk.Frame):
     def __init__(self, root):
@@ -71,23 +70,42 @@ class MyApp(tk.Frame):
                 return "Your BMI is: {}\nYou are obese".format(bmi)
 
         def calculate_and_display():
-            bmi = BMI()
-            result_message = weight_cate(bmi)
-            emptylabel.config(text=result_message)
+            # Check if height and weight are provided
+            if not self.Height.get() or not self.Weight.get():
+                emptylabel.config(text="Please enter valid height and weight.")
+                return
             
-            # Write BMI value to a CSV file
-            with open('bmi_records.csv', 'a', newline='') as csvfile:
-                fieldnames = ['Height', 'Weight', 'BMI']
-                writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-
-                # Write header if file is empty
-                if csvfile.tell() == 0:
-                    writer.writeheader()
-
-                # Write BMI record
-                writer.writerow({'Height': self.Height.get(), 'Weight': self.Weight.get(), 'BMI': bmi})
+            try:
+                h = float(self.Height.get())
+                w = float(self.Weight.get())
                 
-           
+                # Check if height and weight are positive numbers
+                if h <= 0 or w <= 0:
+                    emptylabel.config(text="Height and weight must be non-zero positive numbers.")
+                    return
+                
+                # Calculate BMI
+                m = h / 100
+                bmi = w / m ** 2
+                bmi = round(bmi, 2)
+                
+                # Display BMI result
+                result_message = weight_cate(bmi)
+                emptylabel.config(text=result_message)
+                
+                # Write BMI value to a CSV file
+                with open('bmi_records.csv', 'a', newline='') as csvfile:
+                    fieldnames = ['Height', 'Weight', 'BMI']
+                    writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+
+                    # Write header if file is empty
+                    if csvfile.tell() == 0:
+                        writer.writeheader()
+
+                    # Write BMI record
+                    writer.writerow({'Height': self.Height.get(), 'Weight': self.Weight.get(), 'BMI': bmi})
+            except ValueError:
+                emptylabel.config(text="Please enter valid numerical values for height and weight.")
 
         def display_bmi_graph():
             # Read BMI records from CSV file
