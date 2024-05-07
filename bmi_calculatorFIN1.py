@@ -108,7 +108,7 @@ class MyApp(tk.Frame):
                 emptylabel.config(text="Please enter valid numerical values for height and weight.")
 
         def display_bmi_graph():
-            # Read BMI records from CSV file
+    # Read BMI records from CSV file
             heights = []
             weights = []
             bmis = []
@@ -118,23 +118,42 @@ class MyApp(tk.Frame):
                     heights.append(float(row['Height']))
                     weights.append(float(row['Weight']))
                     bmis.append(float(row['BMI']))
-            # Plot BMI graph
-            plt.figure(figsize=(4.5,2))
-            plt.plot(bmis[-5:], marker='o', color='b')
+    
+    # Define colors for different BMI ranges
+            colors = []
+            for bmi in bmis[-5:]:
+                if bmi < 18.5:
+                    colors.append('blue')
+                elif 18.5 <= bmi < 24.9:
+                    colors.append('green')
+                elif 24.9 <= bmi < 30:
+                    colors.append('orange')
+                else:
+                    colors.append('red')
+    
+     # Plot BMI graph with lines connecting marker points
+            plt.figure(figsize=(4.5, 2))
+            for i in range(len(bmis[-5:])):
+                plt.plot([i, i], [0, bmis[-5:][i]], marker='o', color=colors[i])  # Plot marker point
+                if i > 0:
+                    plt.plot([i-1, i], [bmis[-5:][i-1], bmis[-5:][i]], color=colors[i])  # Connect points with lines
+        
             plt.xlabel('Records')
             plt.ylabel('BMI')
             plt.title('BMI Graph (Last 5 Records)')
             plt.xticks(range(5), ['Record {}'.format(i+1) for i in range(5)])  # Set x-axis labels
-            plt.grid(True)
+            plt.grid(True)  
             plt.tight_layout()
             plt.savefig('bmi_graph.png')
             plt.close()
-            # Display graph image in tkinter
+    
+    # Display graph image in tkinter
             graph_image = Image.open('bmi_graph.png')
             graph_image = ImageTk.PhotoImage(graph_image)
             graph_label = tk.Label(root, image=graph_image)
             graph_label.image = graph_image
             graph_label.place(x=25, y=375)
+
 
         button_calc = tk.Button(root, command=calculate_and_display, text="Calculate", width=12, height=1,
                                 font='arial 10 bold', bg="#1f6e68", fg="white")
