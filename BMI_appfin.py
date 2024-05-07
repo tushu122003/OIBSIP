@@ -167,7 +167,7 @@ class MyApp(tk.Frame):
         emptylabel.place(x=20, y=320)
 
         # Load and place the help icon
-        help_icon = Image.open("oasisinfobyte/helpicon.png")
+        help_icon = Image.open("helpicon.png")
         self.help_icon = ImageTk.PhotoImage(help_icon)
         label_help = tk.Label(root, image=self.help_icon, bg='WHITE')
         label_help.image = self.help_icon
@@ -175,7 +175,7 @@ class MyApp(tk.Frame):
         label_help.bind("<Button-1>", self.open_help_window)  # Bind left mouse click event to open_help_window method
 
         # Set application icon
-        image_icon = Image.open("oasisinfobyte/logo_bmi.png")
+        image_icon = Image.open("logo_bmi.png")
         image_icon = ImageTk.PhotoImage(image_icon)
         root.iconphoto(False, image_icon)
 
@@ -192,7 +192,7 @@ class MyApp(tk.Frame):
             self.help_window.geometry("300x200")
 
             # Load help image
-            help_image = Image.open("oasisinfobyte/BMI.png")
+            help_image = Image.open("BMI.png")
             help_image = ImageTk.PhotoImage(help_image)
 
              # Display help image
