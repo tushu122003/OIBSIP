@@ -18,7 +18,7 @@ class MyApp(tk.Frame):
 
     def create_widgets(self):
         # Load the search image
-        search_image = Image.open('oasisinfobyte/search_bar.jpg')  
+        search_image = Image.open('search_bar.jpg')  
         self.search_photo = ImageTk.PhotoImage(search_image)
         search_label = tk.Label(self.main_frame, image=self.search_photo, bd=0)
         search_label.place(x=90, y=20)
@@ -27,26 +27,26 @@ class MyApp(tk.Frame):
         self.textfield.place(x=100, y=26.5)
         self.textfield.focus()
         # Load the search icon
-        search_icon = Image.open('oasisinfobyte/searchicon.jpg')  # Update the path to your searchicon.jpg image
+        search_icon = Image.open('searchicon.jpg')  # Update the path to your searchicon.jpg image
         self.search = ImageTk.PhotoImage(search_icon)
         # Create a button for search
         search_button = tk.Button(self.main_frame, image=self.search, borderwidth=0, cursor="hand2", command=self.search_weather)
         search_button.place(x=390, y=20)
 #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
         #incase of andriod integration to get gps
-        Locat_icon = Image.open('oasisinfobyte/location-icon.png')  
+        Locat_icon = Image.open('location-icon.png')  
         self.locate = ImageTk.PhotoImage(Locat_icon)
         # Create a button for Gps location
         location_button = tk.Button(self.main_frame, image=self.locate, borderwidth=0, bg='sienna', cursor="hand2")#add command=self.get_gps
         location_button.place(x=475, y=19)
 #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
         # left box
-        box_image = Image.open('oasisinfobyte/box.jpg')  
+        box_image = Image.open('box.jpg')  
         self.box_photo = ImageTk.PhotoImage(box_image)
         box_label = tk.Label(self.main_frame, image=self.box_photo, bd=0)
         box_label.place(x=20, y=100)
         #right box
-        box1_image = Image.open('oasisinfobyte/box1.png')  
+        box1_image = Image.open('box1.png')  
         self.box1_photo = ImageTk.PhotoImage(box1_image)
         box1_label = tk.Label(self.main_frame, image=self.box1_photo, bd=0)
         box1_label.place(x=230, y=100)
@@ -76,46 +76,46 @@ class MyApp(tk.Frame):
         forecastat3_label = tk.Label(self.main_frame, text="Weather at every hour:", font=("poppins", 12, "bold"), fg='black',bg='#F0E7D8')
         forecastat3_label.place(x=30, y=325)        
         # BoTTOM BOXES(a)(hourly forecast)
-        box2a_image = Image.open('oasisinfobyte/box2.jpg')  
+        box2a_image = Image.open('box2.jpg')  
         self.box2a_photo = ImageTk.PhotoImage(box2a_image)
         box2a_label = tk.Label(self.main_frame, image=self.box2a_photo, bd=0, bg='sienna')
         box2a_label.place(x=20, y=350)
-        box3a_image = Image.open('oasisinfobyte/box2.jpg')  
+        box3a_image = Image.open('box2.jpg')  
         self.box3a_photo = ImageTk.PhotoImage(box3a_image)
         box3a_label = tk.Label(self.main_frame, image=self.box3a_photo, bd=0, bg='sienna')
         box3a_label.place(x=125, y=350)
-        box4a_image = Image.open('oasisinfobyte/box2.jpg')  
+        box4a_image = Image.open('box2.jpg')  
         self.box4a_photo = ImageTk.PhotoImage(box4a_image)
         box4a_label = tk.Label(self.main_frame, image=self.box4a_photo, bd=0, bg='sienna')
         box4a_label.place(x=230, y=350)
-        box5a_image = Image.open('oasisinfobyte/box2.jpg')  
+        box5a_image = Image.open('box2.jpg')  
         self.box5a_photo = ImageTk.PhotoImage(box5a_image)
         box5a_label = tk.Label(self.main_frame, image=self.box5a_photo, bd=0, bg='sienna')
         box5a_label.place(x=336, y=350)
-        box6a_image = Image.open('oasisinfobyte/box2.jpg')  
+        box6a_image = Image.open('box2.jpg')  
         self.box6a_photo = ImageTk.PhotoImage(box6a_image)
         box6a_label = tk.Label(self.main_frame, image=self.box6a_photo, bd=0, bg='sienna')
         box6a_label.place(x=440, y=350)
         forecastdaily_label = tk.Label(self.main_frame, text="Daily Weather:", font=("poppins", 12, "bold"), fg='black',bg='#F0E7D8')
         forecastdaily_label.place(x=30, y=480)
         # BoTTOM BOXES(b)(daily forecast)
-        box2b_image = Image.open('oasisinfobyte/box2.jpg')  
+        box2b_image = Image.open('box2.jpg')  
         self.box2b_photo = ImageTk.PhotoImage(box2b_image)
         box2b_label = tk.Label(self.main_frame, image=self.box2b_photo, bd=0, bg='#F0E7D8')
         box2b_label.place(x=20, y=500)
-        box3b_image = Image.open('oasisinfobyte/box2.jpg')  
+        box3b_image = Image.open('box2.jpg')  
         self.box3b_photo = ImageTk.PhotoImage(box3b_image)
         box3b_label = tk.Label(self.main_frame, image=self.box3b_photo, bd=0, bg='#F0E7D8')
         box3b_label.place(x=125, y=500)
-        box4b_image = Image.open('oasisinfobyte/box2.jpg')  
+        box4b_image = Image.open('box2.jpg')  
         self.box4b_photo = ImageTk.PhotoImage(box4b_image)
         box4b_label = tk.Label(self.main_frame, image=self.box4b_photo, bd=0, bg='#F0E7D8')
         box4b_label.place(x=230, y=500)
-        box5b_image = Image.open('oasisinfobyte/box2.jpg')  
+        box5b_image = Image.open('box2.jpg')  
         self.box5b_photo = ImageTk.PhotoImage(box5b_image)
         box5b_label = tk.Label(self.main_frame, image=self.box5b_photo, bd=0, bg='#F0E7D8')
         box5b_label.place(x=336, y=500)
-        box6b_image = Image.open('oasisinfobyte/box2.jpg')  
+        box6b_image = Image.open('box2.jpg')  
         self.box6b_photo = ImageTk.PhotoImage(box6b_image)
         box6b_label = tk.Label(self.main_frame, image=self.box6b_photo, bd=0, bg='#F0E7D8')
         box6b_label.place(x=440, y=500)
@@ -240,7 +240,7 @@ class MyApp(tk.Frame):
 
 
         # Set application icon
-        image_icon = Image.open("oasisinfobyte/logo_Weather.jpg")
+        image_icon = Image.open("logo_Weather.jpg")
         image_icon = ImageTk.PhotoImage(image_icon)
         root.iconphoto(False, image_icon)
         # Display date and time
@@ -268,7 +268,7 @@ class MyApp(tk.Frame):
 
     # Function to fetch weather data using GPS coordinates
     def get_weather(self, latitude, longitude):
-        api_key = "b456f58f670ab84137e5d09fc69e70c6"  # Replace with your API key from OpenWeatherMap
+        api_key = " "  # Replace with your API key from OpenWeatherMap
         url = f"http://api.openweathermap.org/data/2.5/weather?lat={latitude}&lon={longitude}&units=metric&exclude=hourly&appid={api_key}"
         response = requests.get(url)
         data = response.json()
@@ -374,27 +374,27 @@ class MyApp(tk.Frame):
                 #updata hours cell with weather image
                 #hour 1
                     hr1_weather_code=hourly_forecasts['weather_code'][0]
-                    hr1weather_image = Image.open(f"oasisinfobyte/{hr1_weather_code}s.png") 
+                    hr1weather_image = Image.open(f"{hr1_weather_code}s.png") 
                     self.hr1weather_photo = ImageTk.PhotoImage(hr1weather_image)
                     self.first_hr_image.config(image=self.hr1weather_photo) 
                 #hour 2
                     hr2_weather_code=hourly_forecasts['weather_code'][1]
-                    hr2weather_image = Image.open(f"oasisinfobyte/{hr2_weather_code}s.png") 
+                    hr2weather_image = Image.open(f"{hr2_weather_code}s.png") 
                     self.hr2weather_photo = ImageTk.PhotoImage(hr2weather_image)
                     self.second_hr_image.config(image=self.hr2weather_photo)
                 #hour 3
                     hr3_weather_code=hourly_forecasts['weather_code'][2]
-                    hr3weather_image = Image.open(f"oasisinfobyte/{hr3_weather_code}s.png") 
+                    hr3weather_image = Image.open(f"{hr3_weather_code}s.png") 
                     self.hr3weather_photo = ImageTk.PhotoImage(hr3weather_image)
                     self.third_hr_image.config(image=self.hr3weather_photo)
                 #hour 4
                     hr4_weather_code=hourly_forecasts['weather_code'][3]
-                    hr4weather_image = Image.open(f"oasisinfobyte/{hr4_weather_code}s.png") 
+                    hr4weather_image = Image.open(f"{hr4_weather_code}s.png") 
                     self.hr4weather_photo = ImageTk.PhotoImage(hr4weather_image)
                     self.fourth_hr_image.config(image=self.hr4weather_photo)
                 #hour 5 
                     hr5_weather_code=hourly_forecasts['weather_code'][4]
-                    hr5weather_image = Image.open(f"oasisinfobyte/{hr5_weather_code}s.png") 
+                    hr5weather_image = Image.open(f"{hr5_weather_code}s.png") 
                     self.hr5weather_photo = ImageTk.PhotoImage(hr5weather_image)
                     self.fifth_hr_image.config(image=self.hr5weather_photo)               
                 # Update the labels with the forecast data
@@ -412,7 +412,7 @@ class MyApp(tk.Frame):
                 
                 day1_weather_description = weather_codes.get(day1_weather_code, "Unknown")
             # Update the labels with day 1 forecast data
-                day1weather_image = Image.open(f"oasisinfobyte/{day1_weather_code}.png")  
+                day1weather_image = Image.open(f"{day1_weather_code}.png")  
                 self.day1weather_photo = ImageTk.PhotoImage(day1weather_image)
                 self.zerothimage.config(image=self.day1weather_photo)      
                 self.day1_description_label.config(text=day1_weather_description)
@@ -421,27 +421,27 @@ class MyApp(tk.Frame):
             #update cells with Weather images
             #day2
                 day2_weather_code=daily_forecasts['weather_code'][1]
-                day2weather_image = Image.open(f"oasisinfobyte/{day2_weather_code}s.png") 
+                day2weather_image = Image.open(f"{day2_weather_code}s.png") 
                 self.day2weather_photo = ImageTk.PhotoImage(day2weather_image)
                 self.day2_image.config(image=self.day2weather_photo)            
             #day3
                 day3_weather_code=daily_forecasts['weather_code'][2]
-                day3weather_image = Image.open(f"oasisinfobyte/{day3_weather_code}s.png") 
+                day3weather_image = Image.open(f"{day3_weather_code}s.png") 
                 self.day3weather_photo = ImageTk.PhotoImage(day3weather_image)
                 self.day3_image.config(image=self.day3weather_photo)
             #day4
                 day4_weather_code=daily_forecasts['weather_code'][3]
-                day4weather_image = Image.open(f"oasisinfobyte/{day4_weather_code}s.png") 
+                day4weather_image = Image.open(f"{day4_weather_code}s.png") 
                 self.day4weather_photo = ImageTk.PhotoImage(day4weather_image)
                 self.day4_image.config(image=self.day4weather_photo)
             #day5
                 day5_weather_code=daily_forecasts['weather_code'][4]
-                day5weather_image = Image.open(f"oasisinfobyte/{day5_weather_code}s.png") 
+                day5weather_image = Image.open(f"{day5_weather_code}s.png") 
                 self.day5weather_photo = ImageTk.PhotoImage(day5weather_image)
                 self.day5_image.config(image=self.day5weather_photo)
             #day6
                 day6_weather_code=daily_forecasts['weather_code'][5]
-                day6weather_image = Image.open(f"oasisinfobyte/{day6_weather_code}s.png") 
+                day6weather_image = Image.open(f"{day6_weather_code}s.png") 
                 self.day6weather_photo = ImageTk.PhotoImage(day6weather_image)
                 self.day6_image.config(image=self.day6weather_photo)
             # Loop through daily forecasts starting from day 2
