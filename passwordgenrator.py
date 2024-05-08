@@ -10,7 +10,7 @@ root.title("PasswordGen")
 root.geometry('400x400')
 root.resizable(width=False, height=False)
 
-image_icon = Image.open("oasisinfobyte/logo_passgen.png")
+image_icon = Image.open("logo_passgen.png")
 image_icon = ImageTk.PhotoImage(image_icon)
 root.iconphoto(False, image_icon)
 
@@ -97,11 +97,14 @@ Exclude_charcters.place(x=30, y=225)
 
 gen_pass=tk.Label(root,text="", font='helvetica 10 bold',bg='#FFFFFF',height=2,width=30)
 gen_pass.place(x=30, y=320)
-clipboard_image=Image.open('oasisinfobyte/clipboard.png')
+
+#clipboard
+clipboard_image=Image.open('clipboard.png')
 clipboard_photo=ImageTk.PhotoImage(clipboard_image)
 clipboard_button=tk.Button(root, image=clipboard_photo,borderwidth=0,cursor='arrow',command=copy)
 clipboard_button.place(x=290,y=320)
 
+#generate
 button_generate = tk.Button(root, text='Generate', width=12, height=1, font='helvetica 10 bold', bg="#528AAE", fg="white",command=genrate)
 button_generate.place(x=30, y=275)
 
