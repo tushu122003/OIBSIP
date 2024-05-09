@@ -49,16 +49,7 @@ class MyApp(tk.Frame):
         entry_weight = tk.Entry(root, textvariable=self.Weight, width=5, font='arial 50', bg='#fff', fg="#000", bd=0,
                                 justify=tk.CENTER)
         entry_weight.place(x=270, y=100)
-
-        def BMI():
-            h = float(self.Height.get())
-            w = float(self.Weight.get())
-            # to convert height in meter
-            m = h / 100
-            bmi = w / m ** 2
-            bmi = round(bmi, 2)
-            return bmi
-
+        
         def weight_cate(bmi):
             if bmi < 18.5:
                 return "Your BMI is: {}\nYou are underweight".format(bmi)
